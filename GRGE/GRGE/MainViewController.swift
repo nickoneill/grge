@@ -22,8 +22,8 @@ class MainViewController: UIViewController {
     
     mainLabel!.text = MainViewController.instructionsText
     
-    let settingsIconImage = UIImage(named: "gears")!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-    settingsButton!.setImage(settingsIconImage, for: UIControlState.normal)
+    let settingsIconImage = UIImage(named: "gears")!.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+    settingsButton!.setImage(settingsIconImage, for: UIControl.State.normal)
     settingsButton!.tintColor = UIColor.white
   }
 
@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
                          self.clearTouchTimer()
                          self.triggerDoor()
                        })
-    RunLoop.current.add(touchTimer!, forMode: RunLoopMode.commonModes)
+    RunLoop.current.add(touchTimer!, forMode: RunLoop.Mode.common)
     setMainLabelText(MainViewController.keepHoldingText)
   }
   
@@ -62,7 +62,7 @@ class MainViewController: UIViewController {
   func setMainLabelText(_ text: String) {
     UIView.transition(with: mainLabel!,
                       duration: 0.25,
-                      options: UIViewAnimationOptions.transitionCrossDissolve,
+                      options: UIView.AnimationOptions.transitionCrossDissolve,
                       animations: { self.mainLabel!.text = text },
                       completion: nil)
   }
@@ -77,7 +77,7 @@ class MainViewController: UIViewController {
                         self.setMainLabelText(MainViewController.instructionsText)
                       }
     )
-    RunLoop.main.add(textTimer!, forMode: RunLoopMode.commonModes)
+    RunLoop.main.add(textTimer!, forMode: RunLoop.Mode.common)
   }
   
   func clearTextTimer() {
