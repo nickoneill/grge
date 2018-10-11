@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		7E8E0C481DBBEDBC004EE04E /* GRGE-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GRGE-Bridging-Header.h"; sourceTree = "<group>"; };
-		7E9213461DBBC25D0022AAA4 /* GRGE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GRGE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E9213461DBBC25D0022AAA4 /* garage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = garage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9213491DBBC25D0022AAA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E92134B1DBBC25D0022AAA4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7E92134E1DBBC25D0022AAA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,6 +29,7 @@
 		7EC40A3D1DBBCE1D00CAA547 /* gears.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gears.png; sourceTree = "<group>"; };
 		7EC40A3E1DBBCE1D00CAA547 /* gears@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gears@2x.png"; sourceTree = "<group>"; };
 		7EC40A4A1DBBD18C00CAA547 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D0B1EF2F2170098D00079E66 /* garage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = garage.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +46,7 @@
 		7E92133D1DBBC25C0022AAA4 = {
 			isa = PBXGroup;
 			children = (
+				D0B1EF2F2170098D00079E66 /* garage.entitlements */,
 				7E9213481DBBC25D0022AAA4 /* GRGE */,
 				7E9213471DBBC25D0022AAA4 /* Products */,
 			);
@@ -53,7 +55,7 @@
 		7E9213471DBBC25D0022AAA4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7E9213461DBBC25D0022AAA4 /* GRGE.app */,
+				7E9213461DBBC25D0022AAA4 /* garage.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,9 +88,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7E9213451DBBC25C0022AAA4 /* GRGE */ = {
+		7E9213451DBBC25C0022AAA4 /* garage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7E92136E1DBBC25D0022AAA4 /* Build configuration list for PBXNativeTarget "GRGE" */;
+			buildConfigurationList = 7E92136E1DBBC25D0022AAA4 /* Build configuration list for PBXNativeTarget "garage" */;
 			buildPhases = (
 				7E9213421DBBC25C0022AAA4 /* Sources */,
 				7E9213431DBBC25C0022AAA4 /* Frameworks */,
@@ -98,9 +100,9 @@
 			);
 			dependencies = (
 			);
-			name = GRGE;
+			name = garage;
 			productName = GRGE;
-			productReference = 7E9213461DBBC25D0022AAA4 /* GRGE.app */;
+			productReference = 7E9213461DBBC25D0022AAA4 /* garage.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -115,13 +117,18 @@
 				TargetAttributes = {
 					7E9213451DBBC25C0022AAA4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = U835X2PFE6;
+						DevelopmentTeam = 5A8RM3W5R7;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
-			buildConfigurationList = 7E9213411DBBC25C0022AAA4 /* Build configuration list for PBXProject "GRGE" */;
+			buildConfigurationList = 7E9213411DBBC25C0022AAA4 /* Build configuration list for PBXProject "garage" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -134,7 +141,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7E9213451DBBC25C0022AAA4 /* GRGE */,
+				7E9213451DBBC25C0022AAA4 /* garage */,
 			);
 		};
 /* End PBXProject section */
@@ -236,7 +243,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -289,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -302,11 +309,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U835X2PFE6;
+				CODE_SIGN_ENTITLEMENTS = garage.entitlements;
+				DEVELOPMENT_TEAM = 5A8RM3W5R7;
 				INFOPLIST_FILE = GRGE/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.GRGE;
+				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.garage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GRGE/GRGE-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
@@ -317,11 +325,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U835X2PFE6;
+				CODE_SIGN_ENTITLEMENTS = garage.entitlements;
+				DEVELOPMENT_TEAM = 5A8RM3W5R7;
 				INFOPLIST_FILE = GRGE/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.GRGE;
+				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.garage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GRGE/GRGE-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
@@ -331,7 +340,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7E9213411DBBC25C0022AAA4 /* Build configuration list for PBXProject "GRGE" */ = {
+		7E9213411DBBC25C0022AAA4 /* Build configuration list for PBXProject "garage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7E92136C1DBBC25D0022AAA4 /* Debug */,
@@ -340,7 +349,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7E92136E1DBBC25D0022AAA4 /* Build configuration list for PBXNativeTarget "GRGE" */ = {
+		7E92136E1DBBC25D0022AAA4 /* Build configuration list for PBXNativeTarget "garage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7E92136F1DBBC25D0022AAA4 /* Debug */,

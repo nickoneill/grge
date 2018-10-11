@@ -39,6 +39,11 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSUserActivityTypes</key>
+	<dict>
+		<key>Item</key>
+		<string>name.nickoneill.garage.toggle</string>
+	</dict>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

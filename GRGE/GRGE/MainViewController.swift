@@ -17,15 +17,34 @@ class MainViewController: UIViewController {
   private let isolationQueue = DispatchQueue(label: "com.andybons.GRGE.requestPendingQueue",
                                              attributes: .concurrent)
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    mainLabel!.text = MainViewController.instructionsText
-    
-    let settingsIconImage = UIImage(named: "gears")!.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
-    settingsButton!.setImage(settingsIconImage, for: UIControl.State.normal)
-    settingsButton!.tintColor = UIColor.white
-  }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        mainLabel!.text = MainViewController.instructionsText
+
+        let settingsIconImage = UIImage(named: "gears")!.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        settingsButton!.setImage(settingsIconImage, for: UIControl.State.normal)
+        settingsButton!.tintColor = UIColor.white
+
+        setupIntents()
+    }
+
+    func setupIntents() {
+        let activity = NSUserActivity(activityType: "name.nickoneill.garage.toggle")
+        activity.title = "Toggle Garage"
+        activity.userInfo = ["garage" : "toggle"]
+//        activity.isEligibleForSearch = true // 4
+        if #available(iOS 12.0, *) {
+            activity.isEligibleForPrediction = true
+            activity.persistentIdentifier = "name.nickoneill.garage.toggle" as NSUserActivityPersistentIdentifier
+        }
+        view.userActivity = activity
+        activity.becomeCurrent()
+    }
+
+    public func toggleGarage() {
+        triggerDoor()
+    }
 
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
