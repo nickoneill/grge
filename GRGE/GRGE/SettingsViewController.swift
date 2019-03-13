@@ -1,13 +1,10 @@
 import UIKit
-
-struct UserSettingsKey {
-  static let baseURL = "baseURL"
-  static let sharedSecret = "sharedSecret"
-}
+import WatchConnectivity
 
 class SettingsViewController: UIViewController {
-  @IBOutlet var baseURLTextField: UITextField?
-  @IBOutlet var sharedSecretTextField: UITextField?
+    @IBOutlet var baseURLTextField: UITextField?
+    @IBOutlet var sharedSecretTextField: UITextField?
+    var session: WCSession?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,6 +15,12 @@ class SettingsViewController: UIViewController {
       textField.layer.shadowOpacity = 0.15;
       textField.layer.shadowColor = UIColor.white.cgColor
       textField.layer.shadowRadius = 1.0;
+    }
+
+    if WCSession.isSupported() {
+        session = WCSession.default
+        session?.delegate = self
+        session?.activate()
     }
   }
   
@@ -34,4 +37,33 @@ class SettingsViewController: UIViewController {
     defaults.set(self.baseURLTextField!.text, forKey: UserSettingsKey.baseURL)
     defaults.set(self.sharedSecretTextField!.text, forKey: UserSettingsKey.sharedSecret)
   }
+}
+
+extension SettingsViewController: WCSessionDelegate {
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        //
+    }
+
+    func sessionDidDeactivate(_ session: WCSession) {
+        //
+    }
+
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        self.session = session
+    }
+
+
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        // all the documentation I can find says that sending a message from the watch should wake up the
+        // iOS app, but if we're creating a session and setting a delegate, that doesn't persist beyond
+        // the current app session. Instead, let's do this dumbly and sync the credentials if the
+        // settings screen is open.
+
+        let message = [
+            UserSettingsKey.baseURL: self.baseURLTextField?.text ?? "",
+            UserSettingsKey.sharedSecret: self.sharedSecretTextField?.text ?? ""
+        ]
+
+        replyHandler(message)
+    }
 }
