@@ -1,4 +1,5 @@
 import UIKit
+import Intents
 
 class MainViewController: UIViewController {
   static private let instructionsText = "Press and hold in the area above"
@@ -27,16 +28,23 @@ class MainViewController: UIViewController {
     }
 
     func setupIntents() {
-        let activity = NSUserActivity(activityType: "name.nickoneill.garage.toggle")
-        activity.title = "Toggle Garage"
-        activity.userInfo = ["garage" : "toggle"]
-//        activity.isEligibleForSearch = true // 4
-        if #available(iOS 12.0, *) {
-            activity.isEligibleForPrediction = true
-            activity.persistentIdentifier = "name.nickoneill.garage.toggle" as NSUserActivityPersistentIdentifier
-        }
-        view.userActivity = activity
-        activity.becomeCurrent()
+        print("setup")
+          let intent = GarageIntentIntent()
+          intent.suggestedInvocationPhrase = "Toggle Garage"
+
+          let interaction = INInteraction(intent: intent, response: nil)
+
+          interaction.donate { (error) in
+            if error != nil {
+              if let error = error as NSError? {
+                print("interaction donate failed: \(error)")
+//                os_log("Interaction donation failed: %@", log: OSLog.default, type: .error, error)
+              } else {
+                print("donated intent")
+//                os_log("Successfully donated interaction")
+              }
+            }
+          }
     }
 
     public func toggleGarage() {
@@ -103,11 +111,15 @@ class MainViewController: UIViewController {
   }
   
   func triggerDoor() {
-    let defaults = UserDefaults.standard
+    guard let defaults = UserDefaults(suiteName: AppGroupName) else {
+        setMainLabelText("no shared group")
+        return
+    }
+
     guard let baseURL = defaults.string(forKey: UserSettingsKey.baseURL),
         let sharedSecret = defaults.string(forKey: UserSettingsKey.sharedSecret) else {
-      setMainLabelText("Must set base URL and shared secret")
-      return
+        setMainLabelText("Must set base URL and shared secret")
+        return
     }
 
     guard let url = URL(string: baseURL) else {

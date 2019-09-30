@@ -1,5 +1,6 @@
 import UIKit
 import WatchConnectivity
+import IntentsUI
 
 class SettingsViewController: UIViewController {
     @IBOutlet var baseURLTextField: UITextField?
@@ -22,20 +23,31 @@ class SettingsViewController: UIViewController {
         session?.delegate = self
         session?.activate()
     }
+
+    let siriButton = INUIAddVoiceShortcutButton(style: .white)
+    if let shortcut = INShortcut(intent: GarageIntentIntent()) {
+        siriButton.shortcut = shortcut
+    }
+    self.view.addSubview(siriButton)
+    siriButton.translatesAutoresizingMaskIntoConstraints = false
+    siriButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+    siriButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    let defaults = UserDefaults.standard
-    self.baseURLTextField!.text = defaults.string(forKey: UserSettingsKey.baseURL)
-    self.sharedSecretTextField!.text = defaults.string(forKey: UserSettingsKey.sharedSecret)
+    if let defaults = UserDefaults(suiteName: AppGroupName) {
+        self.baseURLTextField!.text = defaults.string(forKey: UserSettingsKey.baseURL)
+        self.sharedSecretTextField!.text = defaults.string(forKey: UserSettingsKey.sharedSecret)
+    }
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    let defaults = UserDefaults.standard
-    defaults.set(self.baseURLTextField!.text, forKey: UserSettingsKey.baseURL)
-    defaults.set(self.sharedSecretTextField!.text, forKey: UserSettingsKey.sharedSecret)
+    if let defaults = UserDefaults(suiteName: AppGroupName) {
+        defaults.set(self.baseURLTextField!.text, forKey: UserSettingsKey.baseURL)
+        defaults.set(self.sharedSecretTextField!.text, forKey: UserSettingsKey.sharedSecret)
+    }
   }
 }
 

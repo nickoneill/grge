@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>INEnums</key>
+	<array/>
+	<key>INIntentDefinitionModelVersion</key>
+	<string>1.1</string>
+	<key>INIntentDefinitionNamespace</key>
+	<string>lZCFku</string>
+	<key>INIntentDefinitionSystemVersion</key>
+	<string>18G103</string>
+	<key>INIntentDefinitionToolsBuildVersion</key>
+	<string>11A1027</string>
+	<key>INIntentDefinitionToolsVersion</key>
+	<string>11.1</string>
+	<key>INIntents</key>
+	<array>
+		<dict>
+			<key>INIntentCategory</key>
+			<string>generic</string>
+			<key>INIntentConfigurable</key>
+			<true/>
+			<key>INIntentDefaultImageName</key>
+			<string>gears</string>
+			<key>INIntentDescription</key>
+			<string>Toggles the garage door</string>
+			<key>INIntentDescriptionID</key>
+			<string>751EQZ</string>
+			<key>INIntentManagedParameterCombinations</key>
+			<dict>
+				<key></key>
+				<dict>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationUpdatesLinked</key>
+					<true/>
+				</dict>
+			</dict>
+			<key>INIntentName</key>
+			<string>GarageIntent</string>
+			<key>INIntentParameterCombinations</key>
+			<dict>
+				<key></key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<true/>
+					<key>INIntentParameterCombinationSubtitle</key>
+					<string>Open or close the door</string>
+					<key>INIntentParameterCombinationSubtitleID</key>
+					<string>ZjCvDs</string>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Toggle the Garage Door</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>QjnDug</string>
+				</dict>
+			</dict>
+			<key>INIntentResponse</key>
+			<dict>
+				<key>INIntentResponseCodes</key>
+				<array>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>The garage door was toggled</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>HuPWIC</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>Done</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>MozvpG</string>
+						<key>INIntentResponseCodeName</key>
+						<string>success</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>The garage door couldn't be toggled</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>1Nf7ux</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>Failed</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>l14aSv</string>
+						<key>INIntentResponseCodeName</key>
+						<string>failure</string>
+					</dict>
+				</array>
+			</dict>
+			<key>INIntentRestrictions</key>
+			<integer>1</integer>
+			<key>INIntentTitle</key>
+			<string>Garage Intent</string>
+			<key>INIntentTitleID</key>
+			<string>HHdhGv</string>
+			<key>INIntentType</key>
+			<string>Custom</string>
+			<key>INIntentVerb</key>
+			<string>Do</string>
+		</dict>
+	</array>
+	<key>INTypes</key>
+	<array/>
+</dict>
+</plist>

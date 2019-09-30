@@ -6,12 +6,14 @@
 //
 
 import Foundation
-import CryptoSwift
+import CryptoKit
 
 struct UserSettingsKey {
     static let baseURL = "baseURL"
     static let sharedSecret = "sharedSecret"
 }
+
+let AppGroupName = "group.name.nickoneill.grge"
 
 class GarageAPI {
     public static var shared: GarageAPI = {
@@ -61,10 +63,20 @@ class GarageAPI {
     }
 
     private func hmacsha1(str: String, key: String) -> String {
-        let result = try? HMAC(key: key, variant: .sha1).authenticate(str.bytes)
+        guard let keyBytes = key.data(using: .utf8) else {
+            preconditionFailure("can't convert to bytes")
 
-        guard let hexBytes = result.flatMap({ $0.toHexString() }) else {
-            return ""
+        }
+        let key = SymmetricKey(data: keyBytes)
+
+        guard let stringBytes = str.data(using: .utf8) else {
+            preconditionFailure("can't convert string to bytes")
+        }
+
+        let auth = HMAC<Insecure.SHA1>.authenticationCode(for: stringBytes, using: key)
+        var hexBytes: String = ""
+        for (_, c) in auth.enumerated() {
+            hexBytes += String(format: "%02x", c)
         }
 
         return hexBytes

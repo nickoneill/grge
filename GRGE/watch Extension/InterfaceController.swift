@@ -15,22 +15,22 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
-        WCSession.default.sendMessage([:], replyHandler: { (response) in
-            let baseURL = response[UserSettingsKey.baseURL] ?? ""
-            let secret = response[UserSettingsKey.sharedSecret] ?? ""
-
-            // defaults here are separate than the iOS ones, so we need to write them again
-            let defaults = UserDefaults.standard
-            defaults.set(baseURL, forKey: UserSettingsKey.baseURL)
-            defaults.set(secret, forKey: UserSettingsKey.sharedSecret)
-
-        }) { (error) in
-            print("error: \(error)")
-        }
+//        WCSession.default.sendMessage([:], replyHandler: { (response) in
+//            let baseURL = response[UserSettingsKey.baseURL] ?? ""
+//            let secret = response[UserSettingsKey.sharedSecret] ?? ""
+//
+//            // defaults here are separate than the iOS ones, so we need to write them again
+//            let defaults = UserDefaults.standard
+//            defaults.set(baseURL, forKey: UserSettingsKey.baseURL)
+//            defaults.set(secret, forKey: UserSettingsKey.sharedSecret)
+//
+//        }) { (error) in
+//            print("error: \(error)")
+//        }
     }
 
     @IBAction func openGarage() {
-        let defaults = UserDefaults.standard
+        let defaults = UserDefaults()
         let baseURL = defaults.string(forKey: UserSettingsKey.baseURL) ?? ""
         let secret = defaults.string(forKey: UserSettingsKey.sharedSecret) ?? ""
 
