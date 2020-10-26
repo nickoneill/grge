@@ -134,6 +134,7 @@
 		D0916AC1234192150069689F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0916AC4234192150069689F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0916AC6234192150069689F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D09FF5382343ACA3007824D2 /* garagewatch WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "garagewatch WatchKit App.entitlements"; sourceTree = "<group>"; };
 		D0A70C5523413CDE007F7610 /* GarageIntent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GarageIntent.entitlements; sourceTree = "<group>"; };
 		D0B1EF2F2170098D00079E66 /* garage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = garage.entitlements; sourceTree = "<group>"; };
 		D0C53FB622342AAC00E72901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -241,6 +242,7 @@
 		D0916AAB234192130069689F /* garagewatch WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				D09FF5382343ACA3007824D2 /* garagewatch WatchKit App.entitlements */,
 				D0916AAC234192130069689F /* Interface.storyboard */,
 				D0916AAF234192140069689F /* Assets.xcassets */,
 				D0916AB1234192140069689F /* Info.plist */,
@@ -418,17 +420,17 @@
 					};
 					D0916AA3234192120069689F = {
 						CreatedOnToolsVersion = 11.1;
-						DevelopmentTeam = 2YUR9JB9X3;
+						DevelopmentTeam = U835X2PFE6;
 						ProvisioningStyle = Automatic;
 					};
 					D0916AA6234192130069689F = {
 						CreatedOnToolsVersion = 11.1;
-						DevelopmentTeam = 2YUR9JB9X3;
+						DevelopmentTeam = U835X2PFE6;
 						ProvisioningStyle = Automatic;
 					};
 					D0916AB5234192140069689F = {
 						CreatedOnToolsVersion = 11.1;
-						DevelopmentTeam = 2YUR9JB9X3;
+						DevelopmentTeam = U835X2PFE6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -815,14 +817,14 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"garagewatch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 2YUR9JB9X3;
+				DEVELOPMENT_TEAM = U835X2PFE6;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "garagewatch WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.garagewatch.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.grgewatch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -842,13 +844,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"garagewatch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 2YUR9JB9X3;
+				DEVELOPMENT_TEAM = U835X2PFE6;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "garagewatch WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.garagewatch.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.grgewatch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -867,14 +869,15 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "garagewatch WatchKit App/garagewatch WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2YUR9JB9X3;
+				DEVELOPMENT_TEAM = U835X2PFE6;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = garagewatch_WatchKit_Extension;
 				INFOPLIST_FILE = "garagewatch WatchKit App/Info.plist";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.garagewatch.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.grgewatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -893,13 +896,14 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "garagewatch WatchKit App/garagewatch WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2YUR9JB9X3;
+				DEVELOPMENT_TEAM = U835X2PFE6;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = garagewatch_WatchKit_Extension;
 				INFOPLIST_FILE = "garagewatch WatchKit App/Info.plist";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.garagewatch.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.grgewatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -918,12 +922,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2YUR9JB9X3;
+				DEVELOPMENT_TEAM = U835X2PFE6;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.garagewatch;
+				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.grgewatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -938,11 +942,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2YUR9JB9X3;
+				DEVELOPMENT_TEAM = U835X2PFE6;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.garagewatch;
+				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.grgewatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

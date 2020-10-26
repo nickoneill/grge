@@ -18,6 +18,7 @@ struct ContentView: View {
 
             if let baseURL = defaults.string(forKey: UserSettingsKey.baseURL), let url = URL(string: baseURL), let secret = defaults.string(forKey: UserSettingsKey.sharedSecret) {
                 GarageAPI.shared.toggleGarage(at: url, withSecret: secret)
+                print("did that work")
             } else {
                 print("no data available")
             }

@@ -16,6 +16,19 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidBecomeActive() {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+        guard let defaults = UserDefaults(suiteName: AppGroupName) else {
+            print("group defaults unavailable")
+            return
+        }
+
+        if let baseURL = defaults.string(forKey: UserSettingsKey.baseURL), let url = URL(string: baseURL), let secret = defaults.string(forKey: UserSettingsKey.sharedSecret) {
+//            GarageAPI.shared.toggleGarage(at: url, withSecret: secret)
+            print("did that work \(url) \(secret)")
+        } else {
+            print("no data available")
+        }
+
     }
 
     func applicationWillResignActive() {

@@ -30,9 +30,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>IntentsRestrictedWhileLocked</key>
-			<array>
-				<string>GarageIntentIntent</string>
-			</array>
+			<array/>
 			<key>IntentsRestrictedWhileProtectedDataUnavailable</key>
 			<array/>
 			<key>IntentsSupported</key>
