@@ -405,7 +405,7 @@
 					7E9213451DBBC25C0022AAA4 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = U835X2PFE6;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1250;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Siri = {
@@ -729,7 +729,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.GRGE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GRGE/GRGE-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -751,7 +751,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = name.nickoneill.GRGE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GRGE/GRGE-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
